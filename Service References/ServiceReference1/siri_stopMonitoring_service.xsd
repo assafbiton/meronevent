@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.siri.org.uk/siri" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siri.org.uk/siri" version="1.4" id="siri_stopMonitoring_service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="siri/siri_common-v1.4.xsd" />
+  <xsd:include schemaLocation="siri_stopTimetable_service.xsd" />
+  <xsd:complexType name="ServiceRequestStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="RequestTimestamp" type="xsd:dateTime" />
+      <xsd:element minOccurs="1" name="RequestorRef" type="ParticipantRefStructure" />
+      <xsd:element minOccurs="1" name="MessageIdentifier" type="MessageQualifierStructure" />
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="StopMonitoringRequest" type="StopMonitoringRequestStructure" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StopMonitoringRequestStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="RequestTimestamp" type="xsd:dateTime" />
+      <xsd:element minOccurs="1" name="MessageIdentifier" type="MessageQualifierStructure" />
+      <xsd:element minOccurs="1" name="PreviewInterval" type="PositiveDurationType" />
+      <xsd:element minOccurs="0" name="StartTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="1" name="MonitoringRef" type="MonitoringRefStructure" />
+      <xsd:element minOccurs="0" name="LineRef" type="LineRefStructure" />
+      <xsd:element minOccurs="0" default="en" name="Language" type="xsd:language" />
+      <xsd:element minOccurs="1" name="MaximumStopVisits" type="xsd:nonNegativeInteger" />
+      <xsd:element minOccurs="0" name="Minimum-StopVisits-PerLine" type="xsd:nonNegativeInteger" />
+      <xsd:element minOccurs="0" name="Maximum-TextLength" type="xsd:nonNegativeInteger" />
+    </xsd:sequence>
+    <xsd:attribute name="version" type="VersionString" use="required" />
+  </xsd:complexType>
+  <xsd:complexType name="ServiceDeliveryStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ResponseTimestamp" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProducerRef" type="ParticipantRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ResponseMessageIdentifier" type="MessageQualifierStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RequestMessageRef" type="MessageRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" default="true" name="Status" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ErrorCondition" type="ServiceDeliveryErrorConditionStructure" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="StopMonitoringDelivery" type="StopMonitoringDeliveryStructure" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StopMonitoringDeliveryStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ResponseTimestamp" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RequestMessageRef" type="MessageRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" default="true" name="Status" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ErrorCondition" type="ServiceDeliveryErrorConditionStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ValidUntil" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="MonitoredStopVisit" type="MonitoredStopVisitStructure" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="MonitoredStopVisitCancellation" type="MonitoredStopVisitCancellationStructure" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="StopLineNotice" type="StopLineNoticeStructure" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="StopLineNoticeCancellation" type="StopLineNoticeCancellationStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Note" type="NaturalLanguageStringStructure" />
+    </xsd:sequence>
+    <xsd:attribute name="version" type="VersionString" use="required" />
+  </xsd:complexType>
+  <xsd:complexType name="MonitoredStopVisitStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="RecordedAtTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ItemIdentifier" type="ItemIdentifierType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="MonitoringRef" type="MonitoringRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ClearDownRef" type="ClearDownRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="MonitoredVehicleJourney" type="MonitoredVehicleJourneyStructure" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="StopVisitNote" type="NaturalLanguageStringStructure" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MonitoredVehicleJourneyStructure">
+    <xsd:all>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LineRef" type="LineRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DirectionRef" type="DirectionRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="OperatorRef" type="OperatorRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="PublishedLineName" type="NaturalLanguageStringStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DestinationRef" type="DestinationRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DatedVehicleJourneyRef" type="DatedVehicleJourneyRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="VehicleRef" type="VehicleRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" default="reliable" name="ConfidenceLevel" type="QualityIndexEnumeration" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="VehicleLocation" type="LocationStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="OriginAimedDepartureTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MonitoredCall" type="MonitoredCallStructure" />
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="MonitoredCallStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="StopPointRef" type="StopPointRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="VehicleAtStop" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="1" default="false" name="RequestStop" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DestinationDisplay" type="NaturalLanguageStringStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="AimedArrivalTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ActualArrivalTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExpectedArrivalTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ArrivalStatus" type="ProgressStatusEnumeration" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ArrivalPlatformName" type="NaturalLanguageStringStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" default="alighting" name="ArrivalBoardingActivity" type="ArrivalBoardingActivityEnumeration" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ActualDepartureTime" type="xsd:dateTime" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MonitoredStopVisitCancellationStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="RecordedAtTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ItemRef" type="ItemRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="MonitoringRef" type="MonitoringRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="VisitNumber" type="VisitNumberType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="LineRef" type="LineRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DirectionRef" type="DirectionRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Reason" type="NaturalLanguageStringStructure" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StopLineNoticeStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="RecordedAtTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ItemIdentifier" type="ItemIdentifierType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="MonitoringRef" type="MonitoringRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="LineRef" type="LineRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DirectionRef" type="DirectionRefStructure" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="SituationRef" type="SituationRefStructure" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="LineNote" type="NaturalLanguagePlaceNameStructure" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StopLineNoticeCancellationStructure">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="RecordedAtTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ItemIdentifierRef" type="ItemIdentifierType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="LineRef" type="LineRefStructure" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

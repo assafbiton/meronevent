@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SiriDB" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ASSAF-PC;Initial Catalog=SiriDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SiriDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_users" Member="tbl_users">
+    <Type Name="tbl_user">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dater" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_sire_lines" Member="tbl_sire_lines">
+    <Type Name="tbl_sire_line">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LineID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StationID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_siri_stations" Member="tbl_siri_stations">
+    <Type Name="tbl_siri_station">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StationID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_operators" Member="tbl_operators">
+    <Type Name="tbl_operator">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="operator_id" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="operator_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dater" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_parkings" Member="tbl_parkings">
+    <Type Name="tbl_parking">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="parking_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parking_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="parking_coordinates" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dater" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

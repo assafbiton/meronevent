@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.siri.org.uk/siri" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0" id="siri_vehicleMonitoring_service">
+
+
+ 
+    <xsd:include  schemaLocation="siri_stopMonitoring_service.xsd"/>
+ 	
+	
+    <xsd:element name="GetStopMonitoringServiceResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Answer" type="ServiceDeliveryStructure"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+	
+ <!--  
+
+	<xsd:complexType name="ServiceDeliveryStructure">
+		<xsd:sequence>
+		    <xsd:element name="ResponseTimestamp"         type="xsd:string"                           minOccurs="1" />
+			<xsd:element name="ProducerRef"               type="xsd:string"                minOccurs="1" />
+			<xsd:element name="ResponseMessageIdentifier" type="xsd:string"              minOccurs="1" />
+			<xsd:element name="RequestMessageRef"         type="xsd:string"                    minOccurs="1" />
+			<xsd:element name="Status"                    type="xsd:string"             minOccurs="1" />
+		</xsd:sequence>		
+	</xsd:complexType>
+-->	
+	
+</xsd:schema>

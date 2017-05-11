@@ -1,0 +1,1654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ituran.com/ituranWebService3" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ituran.com/ituranWebService3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ituran.com/ituranWebService3">
+      <s:element name="GetVehicleMileage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LocTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleMileageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVehicleMileageResult" type="tns:VehiceMileage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VehiceMileage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="resLocTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="resMileage" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVehicleMileageExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LocTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowMileageInMeters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleMileageExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVehicleMileageExtendedResult" type="tns:VehiceMileage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllVehicleMileage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LocTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowMileageInMeters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllVehicleMileageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllVehicleMileageResult" type="tns:ServiceAllDataMileage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceAllDataMileage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehList" type="tns:ArrayOfVehiceMileageExt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVehiceMileageExt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VehiceMileageExt" nillable="true" type="tns:VehiceMileageExt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehiceMileageExt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="resLocTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="resMileage" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateVehicleTripRoute_BCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TripId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteAccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteFullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriverId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Netivim_WorkOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriverCellPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriverIdString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVehicleTripRoute_BCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateVehicleTripRoute_BCityResult" type="tns:IturanTripService" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IturanTripService">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateVehicleTripRoute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TripId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteAccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteFullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriverId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVehicleTripRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateVehicleTripRouteResult" type="tns:IturanTripService" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Wakeup">
+        <s:complexType />
+      </s:element>
+      <s:element name="WakeupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetDebugMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDebugModeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetDebugModeResult" type="tns:ServiceDebugMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceDebugMode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DebugMode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlatformDataExtenteded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowAreas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowStatuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowMileageInMeters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowDriver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlatformDataExtentededResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlatformDataExtentededResult" type="tns:ServicePlatformData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServicePlatformData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VIN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLocationTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLatitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLongitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSpeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastHead" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastMilieage" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UAID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="areas" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="statuses" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="drivername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverTZ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TemperatureSensors" type="tns:ArrayOfTempSensorMinData" />
+          <s:element minOccurs="1" maxOccurs="1" name="currentDriverId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Label" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlatfromId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTempSensorMinData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TempSensorMinData" nillable="true" type="tns:TempSensorMinData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TempSensorMinData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LastTemperature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TemperatureTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sensor1to4" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlatformData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowAreas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowStatuses" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlatformDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlatformDataResult" type="tns:ServicePlatformData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPlatformsDataShortened">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPlatformsDataShortenedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPlatformsDataShortenedResult" type="tns:ServiceAllPlatformDataShortened" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceAllPlatformDataShortened">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehList" type="tns:ArrayOfServicePlatformDataShortened" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServicePlatformDataShortened">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServicePlatformDataShortened" nillable="true" type="tns:ServicePlatformDataShortened" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServicePlatformDataShortened">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlatformId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLocationTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLatitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLongitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSpeed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastHead" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="statuses" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllPlatformsData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowAreas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowStatuses" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowMileageInMeters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowDriver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPlatformsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPlatformsDataResult" type="tns:ServiceAllPlatformData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceAllPlatformData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehList" type="tns:ArrayOfServicePlatformData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServicePlatformData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServicePlatformData" nillable="true" type="tns:ServicePlatformData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendUpdateKeyboardPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyboardPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendUpdateKeyboardPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendUpdateKeyboardPasswordResult" type="tns:CommandResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CommandResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GUIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Units" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="GUID_errors" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendUpdateOdometer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Odometor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendUpdateOdometerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendUpdateOdometerResult" type="tns:CommandResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCommandResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCommandResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCommandResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevGeoCoding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevGeoCodingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RevGeoCodingResult" type="tns:RevGeoCodingData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RevGeoCodingData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RevGeoCodingExact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevGeoCodingExactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RevGeoCodingExactResult" type="tns:AddressData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddressData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HouseNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Accuracy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoadClass" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpeedLimit" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VehiceMileage" nillable="true" type="tns:VehiceMileage" />
+      <s:element name="ServiceAllDataMileage" nillable="true" type="tns:ServiceAllDataMileage" />
+      <s:element name="IturanTripService" nillable="true" type="tns:IturanTripService" />
+      <s:element name="ServiceDebugMode" nillable="true" type="tns:ServiceDebugMode" />
+      <s:element name="ServicePlatformData" nillable="true" type="tns:ServicePlatformData" />
+      <s:element name="ServiceAllPlatformDataShortened" nillable="true" type="tns:ServiceAllPlatformDataShortened" />
+      <s:element name="ServiceAllPlatformData" nillable="true" type="tns:ServiceAllPlatformData" />
+      <s:element name="CommandResult" nillable="true" type="tns:CommandResult" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="RevGeoCodingData" nillable="true" type="tns:RevGeoCodingData" />
+      <s:element name="AddressData" nillable="true" type="tns:AddressData" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVehicleMileageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleMileage" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleMileageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleMileageExtended" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleMileageExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleMileageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllVehicleMileage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleMileageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllVehicleMileageResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRoute_BCitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleTripRoute_BCity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRoute_BCitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleTripRoute_BCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleTripRoute" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleTripRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WakeupSoapIn">
+    <wsdl:part name="parameters" element="tns:Wakeup" />
+  </wsdl:message>
+  <wsdl:message name="WakeupSoapOut">
+    <wsdl:part name="parameters" element="tns:WakeupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDebugModeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDebugMode" />
+  </wsdl:message>
+  <wsdl:message name="SetDebugModeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDebugModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataExtentededSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlatformDataExtenteded" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataExtentededSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlatformDataExtentededResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlatformData" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlatformDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataShortenedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPlatformsDataShortened" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataShortenedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPlatformsDataShortenedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPlatformsData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPlatformsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateKeyboardPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SendUpdateKeyboardPassword" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateKeyboardPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SendUpdateKeyboardPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateOdometerSoapIn">
+    <wsdl:part name="parameters" element="tns:SendUpdateOdometer" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateOdometerSoapOut">
+    <wsdl:part name="parameters" element="tns:SendUpdateOdometerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCommandResultSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCommandResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckCommandResultSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCommandResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingSoapIn">
+    <wsdl:part name="parameters" element="tns:RevGeoCoding" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingSoapOut">
+    <wsdl:part name="parameters" element="tns:RevGeoCodingResponse" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingExactSoapIn">
+    <wsdl:part name="parameters" element="tns:RevGeoCodingExact" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingExactSoapOut">
+    <wsdl:part name="parameters" element="tns:RevGeoCodingExactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageHttpGetIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="LocTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageHttpGetOut">
+    <wsdl:part name="Body" element="tns:VehiceMileage" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageExtendedHttpGetIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="LocTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageExtendedHttpGetOut">
+    <wsdl:part name="Body" element="tns:VehiceMileage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleMileageHttpGetIn">
+    <wsdl:part name="LocTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleMileageHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceAllDataMileage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRoute_BCityHttpGetIn">
+    <wsdl:part name="ItemId" type="s:string" />
+    <wsdl:part name="TripId" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="RouteAccountId" type="s:string" />
+    <wsdl:part name="RouteId" type="s:string" />
+    <wsdl:part name="RouteFullName" type="s:string" />
+    <wsdl:part name="RouteDescription" type="s:string" />
+    <wsdl:part name="VNumber" type="s:string" />
+    <wsdl:part name="DriverId" type="s:string" />
+    <wsdl:part name="Mode" type="s:string" />
+    <wsdl:part name="Netivim_WorkOrderNumber" type="s:string" />
+    <wsdl:part name="CompanyName" type="s:string" />
+    <wsdl:part name="DriverCellPhone" type="s:string" />
+    <wsdl:part name="DriverIdString" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRoute_BCityHttpGetOut">
+    <wsdl:part name="Body" element="tns:IturanTripService" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRouteHttpGetIn">
+    <wsdl:part name="ItemId" type="s:string" />
+    <wsdl:part name="TripId" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="RouteAccountId" type="s:string" />
+    <wsdl:part name="RouteId" type="s:string" />
+    <wsdl:part name="RouteFullName" type="s:string" />
+    <wsdl:part name="RouteDescription" type="s:string" />
+    <wsdl:part name="VNumber" type="s:string" />
+    <wsdl:part name="DriverId" type="s:string" />
+    <wsdl:part name="Mode" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRouteHttpGetOut">
+    <wsdl:part name="Body" element="tns:IturanTripService" />
+  </wsdl:message>
+  <wsdl:message name="WakeupHttpGetIn" />
+  <wsdl:message name="WakeupHttpGetOut" />
+  <wsdl:message name="SetDebugModeHttpGetIn">
+    <wsdl:part name="mode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDebugModeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceDebugMode" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataExtentededHttpGetIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowAreas" type="s:string" />
+    <wsdl:part name="ShowStatuses" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+    <wsdl:part name="ShowDriver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataExtentededHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServicePlatformData" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataHttpGetIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowAreas" type="s:string" />
+    <wsdl:part name="ShowStatuses" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServicePlatformData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataShortenedHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataShortenedHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceAllPlatformDataShortened" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowAreas" type="s:string" />
+    <wsdl:part name="ShowStatuses" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+    <wsdl:part name="ShowDriver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceAllPlatformData" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateKeyboardPasswordHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="KeyboardPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateKeyboardPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:CommandResult" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateOdometerHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="Odometor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateOdometerHttpGetOut">
+    <wsdl:part name="Body" element="tns:CommandResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckCommandResultHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCommandResultHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingHttpGetIn">
+    <wsdl:part name="latitude" type="s:string" />
+    <wsdl:part name="longitude" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingHttpGetOut">
+    <wsdl:part name="Body" element="tns:RevGeoCodingData" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingExactHttpGetIn">
+    <wsdl:part name="latitude" type="s:string" />
+    <wsdl:part name="longitude" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingExactHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressData" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageHttpPostIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="LocTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageHttpPostOut">
+    <wsdl:part name="Body" element="tns:VehiceMileage" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageExtendedHttpPostIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="LocTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleMileageExtendedHttpPostOut">
+    <wsdl:part name="Body" element="tns:VehiceMileage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleMileageHttpPostIn">
+    <wsdl:part name="LocTime" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleMileageHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceAllDataMileage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRoute_BCityHttpPostIn">
+    <wsdl:part name="ItemId" type="s:string" />
+    <wsdl:part name="TripId" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="RouteAccountId" type="s:string" />
+    <wsdl:part name="RouteId" type="s:string" />
+    <wsdl:part name="RouteFullName" type="s:string" />
+    <wsdl:part name="RouteDescription" type="s:string" />
+    <wsdl:part name="VNumber" type="s:string" />
+    <wsdl:part name="DriverId" type="s:string" />
+    <wsdl:part name="Mode" type="s:string" />
+    <wsdl:part name="Netivim_WorkOrderNumber" type="s:string" />
+    <wsdl:part name="CompanyName" type="s:string" />
+    <wsdl:part name="DriverCellPhone" type="s:string" />
+    <wsdl:part name="DriverIdString" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRoute_BCityHttpPostOut">
+    <wsdl:part name="Body" element="tns:IturanTripService" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRouteHttpPostIn">
+    <wsdl:part name="ItemId" type="s:string" />
+    <wsdl:part name="TripId" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="RouteAccountId" type="s:string" />
+    <wsdl:part name="RouteId" type="s:string" />
+    <wsdl:part name="RouteFullName" type="s:string" />
+    <wsdl:part name="RouteDescription" type="s:string" />
+    <wsdl:part name="VNumber" type="s:string" />
+    <wsdl:part name="DriverId" type="s:string" />
+    <wsdl:part name="Mode" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehicleTripRouteHttpPostOut">
+    <wsdl:part name="Body" element="tns:IturanTripService" />
+  </wsdl:message>
+  <wsdl:message name="WakeupHttpPostIn" />
+  <wsdl:message name="WakeupHttpPostOut" />
+  <wsdl:message name="SetDebugModeHttpPostIn">
+    <wsdl:part name="mode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetDebugModeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceDebugMode" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataExtentededHttpPostIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowAreas" type="s:string" />
+    <wsdl:part name="ShowStatuses" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+    <wsdl:part name="ShowDriver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataExtentededHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServicePlatformData" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataHttpPostIn">
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowAreas" type="s:string" />
+    <wsdl:part name="ShowStatuses" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlatformDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServicePlatformData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataShortenedHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataShortenedHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceAllPlatformDataShortened" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ShowAreas" type="s:string" />
+    <wsdl:part name="ShowStatuses" type="s:string" />
+    <wsdl:part name="ShowMileageInMeters" type="s:string" />
+    <wsdl:part name="ShowDriver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatformsDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceAllPlatformData" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateKeyboardPasswordHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="KeyboardPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateKeyboardPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:CommandResult" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateOdometerHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Plate" type="s:string" />
+    <wsdl:part name="Odometor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendUpdateOdometerHttpPostOut">
+    <wsdl:part name="Body" element="tns:CommandResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckCommandResultHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCommandResultHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingHttpPostIn">
+    <wsdl:part name="latitude" type="s:string" />
+    <wsdl:part name="longitude" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingHttpPostOut">
+    <wsdl:part name="Body" element="tns:RevGeoCodingData" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingExactHttpPostIn">
+    <wsdl:part name="latitude" type="s:string" />
+    <wsdl:part name="longitude" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RevGeoCodingExactHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressData" />
+  </wsdl:message>
+  <wsdl:portType name="Service3Soap">
+    <wsdl:operation name="GetVehicleMileage">
+      <wsdl:input message="tns:GetVehicleMileageSoapIn" />
+      <wsdl:output message="tns:GetVehicleMileageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <wsdl:input message="tns:GetVehicleMileageExtendedSoapIn" />
+      <wsdl:output message="tns:GetVehicleMileageExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <wsdl:input message="tns:GetAllVehicleMileageSoapIn" />
+      <wsdl:output message="tns:GetAllVehicleMileageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <wsdl:input message="tns:UpdateVehicleTripRoute_BCitySoapIn" />
+      <wsdl:output message="tns:UpdateVehicleTripRoute_BCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <wsdl:input message="tns:UpdateVehicleTripRouteSoapIn" />
+      <wsdl:output message="tns:UpdateVehicleTripRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <wsdl:input message="tns:WakeupSoapIn" />
+      <wsdl:output message="tns:WakeupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <wsdl:input message="tns:SetDebugModeSoapIn" />
+      <wsdl:output message="tns:SetDebugModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <wsdl:input message="tns:GetPlatformDataExtentededSoapIn" />
+      <wsdl:output message="tns:GetPlatformDataExtentededSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <wsdl:input message="tns:GetPlatformDataSoapIn" />
+      <wsdl:output message="tns:GetPlatformDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <wsdl:input message="tns:GetAllPlatformsDataShortenedSoapIn" />
+      <wsdl:output message="tns:GetAllPlatformsDataShortenedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <wsdl:input message="tns:GetAllPlatformsDataSoapIn" />
+      <wsdl:output message="tns:GetAllPlatformsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <wsdl:input message="tns:SendUpdateKeyboardPasswordSoapIn" />
+      <wsdl:output message="tns:SendUpdateKeyboardPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <wsdl:input message="tns:SendUpdateOdometerSoapIn" />
+      <wsdl:output message="tns:SendUpdateOdometerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <wsdl:input message="tns:CheckCommandResultSoapIn" />
+      <wsdl:output message="tns:CheckCommandResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <wsdl:input message="tns:RevGeoCodingSoapIn" />
+      <wsdl:output message="tns:RevGeoCodingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <wsdl:input message="tns:RevGeoCodingExactSoapIn" />
+      <wsdl:output message="tns:RevGeoCodingExactSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service3HttpGet">
+    <wsdl:operation name="GetVehicleMileage">
+      <wsdl:input message="tns:GetVehicleMileageHttpGetIn" />
+      <wsdl:output message="tns:GetVehicleMileageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <wsdl:input message="tns:GetVehicleMileageExtendedHttpGetIn" />
+      <wsdl:output message="tns:GetVehicleMileageExtendedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <wsdl:input message="tns:GetAllVehicleMileageHttpGetIn" />
+      <wsdl:output message="tns:GetAllVehicleMileageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <wsdl:input message="tns:UpdateVehicleTripRoute_BCityHttpGetIn" />
+      <wsdl:output message="tns:UpdateVehicleTripRoute_BCityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <wsdl:input message="tns:UpdateVehicleTripRouteHttpGetIn" />
+      <wsdl:output message="tns:UpdateVehicleTripRouteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <wsdl:input message="tns:WakeupHttpGetIn" />
+      <wsdl:output message="tns:WakeupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <wsdl:input message="tns:SetDebugModeHttpGetIn" />
+      <wsdl:output message="tns:SetDebugModeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <wsdl:input message="tns:GetPlatformDataExtentededHttpGetIn" />
+      <wsdl:output message="tns:GetPlatformDataExtentededHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <wsdl:input message="tns:GetPlatformDataHttpGetIn" />
+      <wsdl:output message="tns:GetPlatformDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <wsdl:input message="tns:GetAllPlatformsDataShortenedHttpGetIn" />
+      <wsdl:output message="tns:GetAllPlatformsDataShortenedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <wsdl:input message="tns:GetAllPlatformsDataHttpGetIn" />
+      <wsdl:output message="tns:GetAllPlatformsDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <wsdl:input message="tns:SendUpdateKeyboardPasswordHttpGetIn" />
+      <wsdl:output message="tns:SendUpdateKeyboardPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <wsdl:input message="tns:SendUpdateOdometerHttpGetIn" />
+      <wsdl:output message="tns:SendUpdateOdometerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <wsdl:input message="tns:CheckCommandResultHttpGetIn" />
+      <wsdl:output message="tns:CheckCommandResultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <wsdl:input message="tns:RevGeoCodingHttpGetIn" />
+      <wsdl:output message="tns:RevGeoCodingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <wsdl:input message="tns:RevGeoCodingExactHttpGetIn" />
+      <wsdl:output message="tns:RevGeoCodingExactHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service3HttpPost">
+    <wsdl:operation name="GetVehicleMileage">
+      <wsdl:input message="tns:GetVehicleMileageHttpPostIn" />
+      <wsdl:output message="tns:GetVehicleMileageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <wsdl:input message="tns:GetVehicleMileageExtendedHttpPostIn" />
+      <wsdl:output message="tns:GetVehicleMileageExtendedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <wsdl:input message="tns:GetAllVehicleMileageHttpPostIn" />
+      <wsdl:output message="tns:GetAllVehicleMileageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <wsdl:input message="tns:UpdateVehicleTripRoute_BCityHttpPostIn" />
+      <wsdl:output message="tns:UpdateVehicleTripRoute_BCityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <wsdl:input message="tns:UpdateVehicleTripRouteHttpPostIn" />
+      <wsdl:output message="tns:UpdateVehicleTripRouteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <wsdl:input message="tns:WakeupHttpPostIn" />
+      <wsdl:output message="tns:WakeupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <wsdl:input message="tns:SetDebugModeHttpPostIn" />
+      <wsdl:output message="tns:SetDebugModeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <wsdl:input message="tns:GetPlatformDataExtentededHttpPostIn" />
+      <wsdl:output message="tns:GetPlatformDataExtentededHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <wsdl:input message="tns:GetPlatformDataHttpPostIn" />
+      <wsdl:output message="tns:GetPlatformDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <wsdl:input message="tns:GetAllPlatformsDataShortenedHttpPostIn" />
+      <wsdl:output message="tns:GetAllPlatformsDataShortenedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <wsdl:input message="tns:GetAllPlatformsDataHttpPostIn" />
+      <wsdl:output message="tns:GetAllPlatformsDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <wsdl:input message="tns:SendUpdateKeyboardPasswordHttpPostIn" />
+      <wsdl:output message="tns:SendUpdateKeyboardPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <wsdl:input message="tns:SendUpdateOdometerHttpPostIn" />
+      <wsdl:output message="tns:SendUpdateOdometerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <wsdl:input message="tns:CheckCommandResultHttpPostIn" />
+      <wsdl:output message="tns:CheckCommandResultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <wsdl:input message="tns:RevGeoCodingHttpPostIn" />
+      <wsdl:output message="tns:RevGeoCodingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <wsdl:input message="tns:RevGeoCodingExactHttpPostIn" />
+      <wsdl:output message="tns:RevGeoCodingExactHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service3Soap" type="tns:Service3Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehicleMileage">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetVehicleMileage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetVehicleMileageExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetAllVehicleMileage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/UpdateVehicleTripRoute_BCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/UpdateVehicleTripRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/Wakeup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/SetDebugMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetPlatformDataExtenteded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetPlatformData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetAllPlatformsDataShortened" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/GetAllPlatformsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/SendUpdateKeyboardPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/SendUpdateOdometer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/CheckCommandResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/RevGeoCoding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <soap:operation soapAction="http://www.ituran.com/ituranWebService3/RevGeoCodingExact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service3Soap12" type="tns:Service3Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehicleMileage">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetVehicleMileage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetVehicleMileageExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetAllVehicleMileage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/UpdateVehicleTripRoute_BCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/UpdateVehicleTripRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/Wakeup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/SetDebugMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetPlatformDataExtenteded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetPlatformData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetAllPlatformsDataShortened" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/GetAllPlatformsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/SendUpdateKeyboardPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/SendUpdateOdometer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/CheckCommandResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/RevGeoCoding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <soap12:operation soapAction="http://www.ituran.com/ituranWebService3/RevGeoCodingExact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service3HttpGet" type="tns:Service3HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetVehicleMileage">
+      <http:operation location="/GetVehicleMileage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <http:operation location="/GetVehicleMileageExtended" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <http:operation location="/GetAllVehicleMileage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <http:operation location="/UpdateVehicleTripRoute_BCity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <http:operation location="/UpdateVehicleTripRoute" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <http:operation location="/Wakeup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <http:operation location="/SetDebugMode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <http:operation location="/GetPlatformDataExtenteded" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <http:operation location="/GetPlatformData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <http:operation location="/GetAllPlatformsDataShortened" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <http:operation location="/GetAllPlatformsData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <http:operation location="/SendUpdateKeyboardPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <http:operation location="/SendUpdateOdometer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <http:operation location="/CheckCommandResult" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <http:operation location="/RevGeoCoding" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <http:operation location="/RevGeoCodingExact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service3HttpPost" type="tns:Service3HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetVehicleMileage">
+      <http:operation location="/GetVehicleMileage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMileageExtended">
+      <http:operation location="/GetVehicleMileageExtended" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleMileage">
+      <http:operation location="/GetAllVehicleMileage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute_BCity">
+      <http:operation location="/UpdateVehicleTripRoute_BCity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicleTripRoute">
+      <http:operation location="/UpdateVehicleTripRoute" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Wakeup">
+      <http:operation location="/Wakeup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetDebugMode">
+      <http:operation location="/SetDebugMode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformDataExtenteded">
+      <http:operation location="/GetPlatformDataExtenteded" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlatformData">
+      <http:operation location="/GetPlatformData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsDataShortened">
+      <http:operation location="/GetAllPlatformsDataShortened" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlatformsData">
+      <http:operation location="/GetAllPlatformsData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateKeyboardPassword">
+      <http:operation location="/SendUpdateKeyboardPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateOdometer">
+      <http:operation location="/SendUpdateOdometer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCommandResult">
+      <http:operation location="/CheckCommandResult" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCoding">
+      <http:operation location="/RevGeoCoding" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevGeoCodingExact">
+      <http:operation location="/RevGeoCodingExact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service3">
+    <wsdl:port name="Service3Soap" binding="tns:Service3Soap">
+      <soap:address location="https://www.ituran.com/ituranwebservice3/Service3.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service3Soap12" binding="tns:Service3Soap12">
+      <soap12:address location="https://www.ituran.com/ituranwebservice3/Service3.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service3HttpGet" binding="tns:Service3HttpGet">
+      <http:address location="https://www.ituran.com/ituranwebservice3/Service3.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service3HttpPost" binding="tns:Service3HttpPost">
+      <http:address location="https://www.ituran.com/ituranwebservice3/Service3.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

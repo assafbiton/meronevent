@@ -1,0 +1,12 @@
+Base on Siri_XML-v1.4
+
+Replace all http://www.siri.org.uk/siri with wsdl_lib
+  
+Remove duplication of HalfOpenTimeRangeStructure at iflot-time-v0.2
+Remove duplication of FeatureRefStructure at ifopt_location-x0.3
+Change name of MonitoredVehicleJourneyStructure to MonitoredVehicleJourneyStructure at siri_journey-v1.3
+Change name of MonitoredCallStructure to MonitoredCallStructure_dup at siri_journey-v1.3
+
+When loading to Netbeans:
+1. Open Web Service Client
+   package name = wsdl_lib

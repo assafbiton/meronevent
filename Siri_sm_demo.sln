@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siri_sm_demo", "Siri_sm_demo\Siri_sm_demo.csproj", "{6A8BCFBB-A658-4B39-BDF3-132D8373CEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointerAccess", "PointerAccess\PointerAccess.csproj", "{F86D6307-004C-47C6-8BEE-1B0496FDF45E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RivaAccess", "RivaAccess\RivaAccess.csproj", "{551E2686-DE1B-4184-B34F-96CB0CC04267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeronWebSite", "MeronWebSite\MeronWebSite.csproj", "{E05DF8ED-0F45-4FEB-B0A7-ED4DADB54932}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite3", "..\..\..\Documents\Visual Studio 2015\WebSites\WebSite3\", "{C443EEA3-E5AD-42CD-A088-5B3F6BBF9C8B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51630"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Documents\Visual Studio 2015\WebSites\WebSite3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51630\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51630"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Documents\Visual Studio 2015\WebSites\WebSite3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51630\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51630"
+		SlnRelativePath = "..\..\..\Documents\Visual Studio 2015\WebSites\WebSite3\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netalizerAccess", "netalizerAccess\netalizerAccess.csproj", "{ED415CFA-2110-49E4-85F2-AE712023699E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A8BCFBB-A658-4B39-BDF3-132D8373CEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8BCFBB-A658-4B39-BDF3-132D8373CEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8BCFBB-A658-4B39-BDF3-132D8373CEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8BCFBB-A658-4B39-BDF3-132D8373CEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86D6307-004C-47C6-8BEE-1B0496FDF45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86D6307-004C-47C6-8BEE-1B0496FDF45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86D6307-004C-47C6-8BEE-1B0496FDF45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86D6307-004C-47C6-8BEE-1B0496FDF45E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551E2686-DE1B-4184-B34F-96CB0CC04267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551E2686-DE1B-4184-B34F-96CB0CC04267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551E2686-DE1B-4184-B34F-96CB0CC04267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551E2686-DE1B-4184-B34F-96CB0CC04267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E05DF8ED-0F45-4FEB-B0A7-ED4DADB54932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E05DF8ED-0F45-4FEB-B0A7-ED4DADB54932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E05DF8ED-0F45-4FEB-B0A7-ED4DADB54932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E05DF8ED-0F45-4FEB-B0A7-ED4DADB54932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C443EEA3-E5AD-42CD-A088-5B3F6BBF9C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C443EEA3-E5AD-42CD-A088-5B3F6BBF9C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C443EEA3-E5AD-42CD-A088-5B3F6BBF9C8B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C443EEA3-E5AD-42CD-A088-5B3F6BBF9C8B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{ED415CFA-2110-49E4-85F2-AE712023699E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED415CFA-2110-49E4-85F2-AE712023699E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED415CFA-2110-49E4-85F2-AE712023699E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED415CFA-2110-49E4-85F2-AE712023699E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

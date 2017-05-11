@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="856c4d44-78bb-492f-8c24-6a8cb7d3c3dd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="j:\users\freeware sys\documents\visual studio 2015\Projects\Siri_sm_demo\Siri_sm_demo\SIRI_SM_2_7_ver1\siri_wsProducer_Israel.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="accessibility.xsd" MetadataType="Schema" ID="24ed17c1-fd14-4d79-b66f-88dd49b258e5" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/acsb/acsb_accessibility-v0.3.xsd" />
+    <MetadataFile FileName="siri_operator.xsd" MetadataType="Schema" ID="8f8fe6ee-05db-49f3-b975-46ea31314c16" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_operator-v1.2.xsd" />
+    <MetadataFile FileName="passengerMobility.xsd" MetadataType="Schema" ID="2e98014a-81c0-40e3-8a76-861f7f17255c" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/acsb/acsb_passengerMobility-v0.3.xsd" />
+    <MetadataFile FileName="ifopt_modes.xsd" MetadataType="Schema" ID="114f1210-57b8-4f70-b27f-4c49b24c5249" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_modes-v0.2.xsd" />
+    <MetadataFile FileName="siri_modes.xsd" MetadataType="Schema" ID="8d567bcf-727b-45c0-aca0-3a9b82220559" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_modes-v1.1.xsd" />
+    <MetadataFile FileName="siri_stopTimetable_service.xsd" MetadataType="Schema" ID="e4f6c5cd-1f74-4c4d-b7c5-51a2a20305de" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri_stopTimetable_service.xsd" />
+    <MetadataFile FileName="ifopt_countries.xsd" MetadataType="Schema" ID="4edd247b-750a-4c2d-b3a7-e6029dee45ab" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_countries-v0.2.xsd" />
+    <MetadataFile FileName="xml.xsd" MetadataType="Schema" ID="0280e95b-6208-4e5a-8636-25b9bff025dc" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/xml/xml.xsd" />
+    <MetadataFile FileName="siri_facilities.xsd" MetadataType="Schema" ID="fbdc59dd-ee4f-4283-8d9d-c9e99a80b375" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_facilities-v1.2.xsd" />
+    <MetadataFile FileName="siri_feature.xsd" MetadataType="Schema" ID="081dab96-a31c-48b2-8e5c-ed34dfc4fd47" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_feature-v1.1.xsd" />
+    <MetadataFile FileName="siri_time.xsd" MetadataType="Schema" ID="34a06b80-e213-4884-8b7d-06a5e1c0ccb5" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_time-v1.2.xsd" />
+    <MetadataFile FileName="siri_requests.xsd" MetadataType="Schema" ID="b74470d0-c914-4fbb-86c9-c21112f5cd56" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_utility-v1.1.xsd" />
+    <MetadataFile FileName="siri_wsProducer_Israel.wsdl" MetadataType="Wsdl" ID="6e15a685-a6a8-412b-8d65-1ee99c0cf358" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri_wsProducer_Israel.wsdl" />
+    <MetadataFile FileName="siri_stopMonitoring_service.xsd" MetadataType="Schema" ID="1e61fe14-7587-419a-8cda-dbde088b6def" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri_stopMonitoring_service.xsd" />
+    <MetadataFile FileName="ifopt_checkpoint.xsd" MetadataType="Schema" ID="7ee72a01-c3b4-4f0c-8edd-a1532e9a9a93" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_checkpoint-v0.3.xsd" />
+    <MetadataFile FileName="siri_participant.xsd" MetadataType="Schema" ID="12a0ee42-3dcf-475f-a7af-2c9fe807df72" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_participant-v1.1.xsd" />
+    <MetadataFile FileName="siri_journey.xsd" MetadataType="Schema" ID="0c7768c2-bd1e-4043-b79d-8ec3957a9537" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_journey-v1.3.xsd" />
+    <MetadataFile FileName="siri_requests1.xsd" MetadataType="Schema" ID="df44d57c-f15b-4eaa-8d91-d392aa52b1de" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_requests-v1.3.xsd" />
+    <MetadataFile FileName="ifopt_stop.xsd" MetadataType="Schema" ID="10efd193-313d-4e6b-93fc-f1fac1f52936" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_stop-v0.3.xsd" />
+    <MetadataFile FileName="siri_situationIdentity.xsd" MetadataType="Schema" ID="1e72e32e-f2fa-4cb3-9ba7-1eb50eccb2ed" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_situationIdentity-v1.1.xsd" />
+    <MetadataFile FileName="siri_permissions.xsd" MetadataType="Schema" ID="5c978f1c-c94c-4fef-be90-d8f07af43ca8" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_permissions-v1.2.xsd" />
+    <MetadataFile FileName="ifopt_path.xsd" MetadataType="Schema" ID="64986360-7ca7-4096-a59c-14a0b727bd82" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_path-v0.2.xsd" />
+    <MetadataFile FileName="siri_common.xsd" MetadataType="Schema" ID="ed6a1352-e4f6-4baf-8a51-50474c6ea8fa" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_common-v1.4.xsd" />
+    <MetadataFile FileName="ifopt_location.xsd" MetadataType="Schema" ID="4b5e5be5-73f6-4424-a893-e203549a330d" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_location-v0.3.xsd" />
+    <MetadataFile FileName="siri_types.xsd" MetadataType="Schema" ID="608c653e-f168-41ed-8034-52705fcf9a28" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_types-v1.1.xsd" />
+    <MetadataFile FileName="ifopt_modification.xsd" MetadataType="Schema" ID="a4ec2435-ccee-48f4-a45f-81819767216e" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_modification-v0.3.xsd" />
+    <MetadataFile FileName="ifopt_administration.xsd" MetadataType="Schema" ID="2ad69047-ac1d-40d6-989e-ecfba84b07f7" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_administration-v0.3.xsd" />
+    <MetadataFile FileName="acsb_all.xsd" MetadataType="Schema" ID="8630f3e1-d1cd-4335-92fb-34b342429e08" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/acsb/acsb_all-v0.3.xsd" />
+    <MetadataFile FileName="siri_location.xsd" MetadataType="Schema" ID="cf21029d-385f-419c-8a84-fc7d76b5a8f3" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_location-v1.1.xsd" />
+    <MetadataFile FileName="accessibility1.xsd" MetadataType="Schema" ID="a135be5a-e038-40e7-900a-5b1f6623c9b5" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/acsb/acsb_limitations-v0.2.xsd" />
+    <MetadataFile FileName="ifopt_time.xsd" MetadataType="Schema" ID="90b447ce-8a9f-485d-885d-540798936f02" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_time-v0.2.xsd" />
+    <MetadataFile FileName="ifopt_allStopPlace.xsd" MetadataType="Schema" ID="1c820026-3aa5-4646-9d62-8c0f4ebe4a34" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_allStopPlace-v0.3.xsd" />
+    <MetadataFile FileName="ifopt_types.xsd" MetadataType="Schema" ID="0d4ce8fe-77f1-46a3-b48e-1b0ade891eef" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_types-v0.2.xsd" />
+    <MetadataFile FileName="ifopt_equipment.xsd" MetadataType="Schema" ID="8710f664-b322-4c81-b0d3-58781d503e9e" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/ifopt/ifopt_equipment-v0.3.xsd" />
+    <MetadataFile FileName="siri_reference.xsd" MetadataType="Schema" ID="ca6a26cb-f354-49f3-a8f7-cd60c845f73c" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_reference-v1.2.xsd" />
+    <MetadataFile FileName="siri_facility.xsd" MetadataType="Schema" ID="5b63a685-cb78-48ce-b7e4-0ee3ecec00df" SourceId="1" SourceUrl="file:///j:/users/freeware sys/documents/visual studio 2015/Projects/Siri_sm_demo/Siri_sm_demo/SIRI_SM_2_7_ver1/siri/siri_facility-v1.3.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

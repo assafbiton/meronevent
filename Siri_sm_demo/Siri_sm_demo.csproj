@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A8BCFBB-A658-4B39-BDF3-132D8373CEAC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Siri_sm_demo</RootNamespace>
+    <AssemblyName>Siri_sm_demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Print_sm_response.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ituranWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference1\accessibility.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\accessibility1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\acsb_all.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_administration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_allStopPlace.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_checkpoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_countries.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_equipment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_location.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_modes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_modification.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_path.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_stop.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_time.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\ifopt_types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\passengerMobility.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_facilities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_facility.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_feature.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_journey.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_location.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_modes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_operator.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_participant.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_permissions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_reference.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_requests.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_requests1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_situationIdentity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Siri_sm_demo.ServiceReference1.ServiceDeliveryStructure.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_stopMonitoring_service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_stopTimetable_service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_time.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\siri_wsProducer_Israel.wsdl" />
+    <None Include="Service References\ServiceReference1\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\acsb\acsb_accessibility-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\acsb\acsb_all-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\acsb\acsb_limitations-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\acsb\acsb_passengerMobility-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\datex2\DATEXIISchema_1_0_1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_administration-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_allStopPlace-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_checkpoint-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_countries-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_equipment-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_feature-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_location-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_modes-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_modification-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_path-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_stop-v0.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_time-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\ifopt\ifopt_types-v0.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\response_stab.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_all-v1.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_allBasic-v1.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_base-v1.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_common-v1.4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_facilities-v1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_facility-v1.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_feature-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_journey-v1.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_location-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_modes-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_operator-v1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_participant-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_permissions-v1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_reference-v1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_requests-v1.3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situation-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situationActions-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situationAffects-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situationClassifiers-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situationIdentity-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situationReasons-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_situationServiceTypes-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_time-v1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_types-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri\siri_utility-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri_stopMonitoring_service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri_stopTimetable_service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIRI_SM_2_7_ver1\siri_wsProducer_Israel.wsdl" />
+    <None Include="SIRI_SM_2_7_ver1\xml\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ituranWS\AddressData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\CommandResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\IturanTripService.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ituranWS\RevGeoCodingData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\Service3.wsdl" />
+    <None Include="Web References\ituranWS\ServiceAllDataMileage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\ServiceAllPlatformData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\ServiceAllPlatformDataShortened.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\ServiceDebugMode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\ServicePlatformData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ituranWS\VehiceMileage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ituranWS\Service3.disco" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <Content Include="SIRI_SM_2_7_ver1\Reademe.txt" />
+    <Content Include="SIRI_SM_2_7_ver1\SoapUI\Request.xml" />
+    <Content Include="SIRI_SM_2_7_ver1\SoapUI\Response.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://www.ituran.com/ituranwebservice3/Service3.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\ituranWS\</RelPath>
+      <UpdateFromURL>https://www.ituran.com/ituranwebservice3/Service3.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Siri_sm_demo_ituranWS_Service3</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

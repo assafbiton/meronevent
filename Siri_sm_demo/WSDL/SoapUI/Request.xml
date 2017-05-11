@@ -1,0 +1,34 @@
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:new="http://new.webservice.namespace" 
+	xmlns:siri="http://www.siri.org.uk/siri"
+	>
+	<soapenv:Header/>
+	<soapenv:Body>
+		<new:GetStopMonitoringService>
+			<Request>
+				<siri:RequestTimestamp>2017-01-10T08:34:13.224+02:00</siri:RequestTimestamp>
+				<siri:RequestorRef>AC456009</siri:RequestorRef>
+				<siri:MessageIdentifier>AC:34</siri:MessageIdentifier>
+				<!--1 or more repetitions:-->
+				<siri:StopMonitoringRequest version="2.7">
+					<siri:RequestTimestamp>2017-01-10T08:34:13.224+02:00</siri:RequestTimestamp>
+					<siri:MessageIdentifier>AC:3434</siri:MessageIdentifier>
+					<siri:PreviewInterval>PT60M</siri:PreviewInterval>
+					<!--Optional:-->
+					<siri:StartTime>?</siri:StartTime>
+					<siri:MonitoringRef>32902</siri:MonitoringRef>
+					<!--Optional:-->
+					<siri:LineRef>?</siri:LineRef>
+					<!--Optional:-->
+					<siri:Language>en</siri:Language>
+					<siri:MaximumStopVisits>?</siri:MaximumStopVisits>
+					<!--Optional:-->
+					<siri:Minimum-StopVisits-PerLine>?</siri:Minimum-StopVisits-PerLine>
+					<!--Optional:-->
+					<siri:Maximum-TextLength>?</siri:Maximum-TextLength>
+				</siri:StopMonitoringRequest>
+			</Request>
+		</new:GetStopMonitoringService>
+	</soapenv:Body>
+</soapenv:Envelope>

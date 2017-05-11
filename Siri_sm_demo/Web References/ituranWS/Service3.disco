@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://www.ituran.com/ituranwebservice3/Service3.asmx?wsdl" docRef="https://www.ituran.com/ituranwebservice3/Service3.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://www.ituran.com/ituranwebservice3/Service3.asmx" xmlns:q1="http://www.ituran.com/ituranWebService3" binding="q1:Service3Soap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://www.ituran.com/ituranwebservice3/Service3.asmx" xmlns:q2="http://www.ituran.com/ituranWebService3" binding="q2:Service3Soap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

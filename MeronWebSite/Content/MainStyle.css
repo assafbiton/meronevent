@@ -1,0 +1,19 @@
+﻿body {
+    direction:rtl;
+    font-family:Arial;
+}
+
+.BakarForm {
+    padding-top:20px;
+  
+     padding:20px;
+     border:1px solid  #808080;
+        border-radius: 5px;
+}
+
+.carForm,.BakarForm input[type=radio]{
+    margin-top:5px;
+
+}
+
+.login{ direction:ltr;}
