@@ -21,6 +21,8 @@ namespace netalizerAccess
     class Program
     {
 
+        public static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["siriDB"].ConnectionString;
+
         static void Main(string[] args)
         {
 
