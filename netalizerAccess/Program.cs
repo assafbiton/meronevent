@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,14 +34,38 @@ namespace netalizerAccess
             List<Row> items = (from r in xml.Root.Elements("report")
                                select new Row
                                {
-                                   plate = (string)r.Element("fields").Element("field").Attribute("value"),
-                                   latitude = (string)r.Element("events").Element("event").Attribute("latitude"),
-                                   longitude = (string)r.Element("events").Element("event").Attribute("longitude")
+                                   plate = (string)r.Element("fields").Element("field").Attribute("value")
+                                  // ,latitude = (string)r.Element("events").Element("event").Attribute("latitude"),
+                                  // longitude = (string)r.Element("events").Element("event").Attribute("longitude")
                                }).ToList();
 
             foreach (XElement element in xml.Descendants("fields"))
             {
                 Console.WriteLine(element.Element("field").Attribute("value").Value);
+
+                SqlConnection conn = new SqlConnection(connection);
+                SqlCommand cmd = new SqlCommand("Insert_tbl_pointer_proccess", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("Plate", item.Plate.ToString());
+                cmd.Parameters.AddWithValue("LastLocationTime", item.LastLocationTime);
+                cmd.Parameters.AddWithValue("LastLatitude", item.LastLatitude.ToString());
+                cmd.Parameters.AddWithValue("LastLongitude", item.LastLongitude.ToString());
+                cmd.Parameters.AddWithValue("UAID", item.UAID.ToString());
+                cmd.Parameters.AddWithValue("PlatfromId", item.PlatfromId.ToString());
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Execption adding account. " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
             }
  
        
