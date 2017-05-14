@@ -16,6 +16,8 @@ namespace netalizerAccess
         public string plate { get; set; }
         public string latitude { get; set; }
         public string longitude { get; set; }
+        public string userID { get; set; }
+
     }
 
     class Program
@@ -33,45 +35,70 @@ namespace netalizerAccess
             XName url = XName.Get("url", "http://www.sitemaps.org/schemas/sitemap/0.9");
             XName loc = XName.Get("loc", "http://www.sitemaps.org/schemas/sitemap/0.9");
 
-            List<Row> items = (from r in xml.Root.Elements("report")
-                               select new Row
-                               {
-                                   plate = (string)r.Element("fields").Element("field").Attribute("value")
-                                  // ,latitude = (string)r.Element("events").Element("event").Attribute("latitude"),
-                                  // longitude = (string)r.Element("events").Element("event").Attribute("longitude")
-                               }).ToList();
+            List<Row> LSTrOW = new List<Row>();
 
-            foreach (XElement element in xml.Descendants("fields"))
+            IEnumerable<XElement> authors = xml.Descendants("report");
+            foreach (XElement report in xml.Root.Elements("report"))
             {
-                Console.WriteLine(element.Element("field").Attribute("value").Value);
+                Row row = new Row();
+                if (report.Element("events").Element("event")!=null)
+                {
+                    row.userID = report.Element("user").Attribute("id").Value;
+                    row.latitude = report.Element("events").Element("event").Attributes("latitude").Any() ?  (string)report.Element("events").Element("event").Attribute("latitude"):"";
+                    row.longitude = report.Element("events").Element("event").Attributes("longitude").Any() ?  (string)report.Element("events").Element("event").Attribute("longitude"):"";
+                    row.plate = (string)report.Element("fields").Element("field").Attribute("value");
+                    LSTrOW.Add(row);
+                }
+
+
+
+            }
+              
+          SqlConnection conn2 = new SqlConnection(connection);
+                SqlCommand cmd2 = new SqlCommand("DELETEALLFROMRIVA", conn2);
+            cmd2.CommandType = CommandType.StoredProcedure;
+            conn2.Open();
+            cmd2.ExecuteNonQuery();
+            conn2.Close();
+
+            foreach (Row element in LSTrOW)
+            {
+         
 
                 SqlConnection conn = new SqlConnection(connection);
-                SqlCommand cmd = new SqlCommand("Insert_tbl_pointer_proccess", conn);
+                SqlCommand cmd = new SqlCommand("Insert_Riva_proccess", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("Plate", item.Plate.ToString());
-                cmd.Parameters.AddWithValue("LastLocationTime", item.LastLocationTime);
-                cmd.Parameters.AddWithValue("LastLatitude", item.LastLatitude.ToString());
-                cmd.Parameters.AddWithValue("LastLongitude", item.LastLongitude.ToString());
-                cmd.Parameters.AddWithValue("UAID", item.UAID.ToString());
-                cmd.Parameters.AddWithValue("PlatfromId", item.PlatfromId.ToString());
-                try
+
+                if (element.latitude !="" && element.longitude!="" && element.plate != null)
                 {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("userID", element.userID);
+                    cmd.Parameters.AddWithValue("plate", element.plate);
+                    cmd.Parameters.AddWithValue("inlatitude", element.latitude);
+                    cmd.Parameters.AddWithValue("inlongitude", element.longitude);
+                    cmd.Parameters.AddWithValue("outlatitude", element.latitude);
+                    cmd.Parameters.AddWithValue("outinlongitude", element.longitude);
+                    cmd.Parameters.AddWithValue("receiveTime", DateTime.Now);
+
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Execption adding account. " + ex.Message);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception("Execption adding account. " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
+ 
 
             }
  
        
-            Console.ReadKey();
+          //  Console.ReadKey();
         }
     }
 }
