@@ -31,12 +31,13 @@ namespace netalizerAccess
 
 
 
-        string dtNow =     Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-ddThh:mm:ss.msZ");
-            string dtNowMinsHour = Convert.ToDateTime(DateTime.Now.AddHours(-1)).ToString("yyyy-MM-ddThh:mm:ss.msZ");
-       
+        string dtNow =     Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-ddTHH:mm:ss.msZ");
+            string dtNowMinsHour = Convert.ToDateTime(DateTime.Now.AddHours(-4)).ToString("yyyy-MM-ddThh:mm:ss.msZ");
 
-            //string uri = "http://gazpacho.netalizer.co.il/GazpachoApi/reports?orgId=1821&user=tahbura_lag_ba_omer&password=uDp5g38S47b23hd&returnDetails=1";
+
+           // string uri = "http://gazpacho.netalizer.co.il/GazpachoApi/reports?orgId=1821&user=tahbura_lag_ba_omer&password=uDp5g38S47b23hd&returnDetails=1&fromTime=2017-05-14T09:36:38.3638Z&tillTime=2017-05-14T12:36:38.3638Z";
             string uri = "http://gazpacho.netalizer.co.il/GazpachoApi/reports?orgId=1821&user=tahbura_lag_ba_omer&password=uDp5g38S47b23hd&returnDetails=1&fromTime="+ dtNowMinsHour + "&tillTime="+ dtNow;
+
 
 
 
