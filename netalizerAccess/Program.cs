@@ -17,7 +17,7 @@ namespace netalizerAccess
         public string latitude { get; set; }
         public string longitude { get; set; }
         public string userID { get; set; }
-
+        public string receiveTime { get; set; }
     }
 
     class Program
@@ -47,6 +47,7 @@ namespace netalizerAccess
                     row.latitude = report.Element("events").Element("event").Attributes("latitude").Any() ?  (string)report.Element("events").Element("event").Attribute("latitude"):"";
                     row.longitude = report.Element("events").Element("event").Attributes("longitude").Any() ?  (string)report.Element("events").Element("event").Attribute("longitude"):"";
                     row.plate = (string)report.Element("fields").Element("field").Attribute("value");
+                    row.receiveTime=report.Element("events").Element("event").Attributes("time").Any() ?  (string)report.Element("events").Element("event").Attribute("time") :"";
                     LSTrOW.Add(row);
                 }
 
@@ -77,7 +78,7 @@ namespace netalizerAccess
                     cmd.Parameters.AddWithValue("inlongitude", element.longitude);
                     cmd.Parameters.AddWithValue("outlatitude", element.latitude);
                     cmd.Parameters.AddWithValue("outinlongitude", element.longitude);
-                    cmd.Parameters.AddWithValue("receiveTime", DateTime.Now);
+                    cmd.Parameters.AddWithValue("receiveTime", element.receiveTime);
 
                     try
                     {
