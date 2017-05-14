@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,15 @@ namespace netalizerAccess
         static void Main(string[] args)
         {
 
-            string uri = "http://gazpacho.netalizer.co.il/GazpachoApi/reports?orgId=1821&user=tahbura_lag_ba_omer&password=uDp5g38S47b23hd&returnDetails=1";
+
+
+        string dtNow =     Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-ddThh:mm:ss.msZ");
+            string dtNowMinsHour = Convert.ToDateTime(DateTime.Now.AddHours(-1)).ToString("yyyy-MM-ddThh:mm:ss.msZ");
+       
+
+            //string uri = "http://gazpacho.netalizer.co.il/GazpachoApi/reports?orgId=1821&user=tahbura_lag_ba_omer&password=uDp5g38S47b23hd&returnDetails=1";
+            string uri = "http://gazpacho.netalizer.co.il/GazpachoApi/reports?orgId=1821&user=tahbura_lag_ba_omer&password=uDp5g38S47b23hd&returnDetails=1&fromTime="+ dtNowMinsHour + "&tillTime="+ dtNow;
+
 
 
             XDocument xml = XDocument.Load(uri);
